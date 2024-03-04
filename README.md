@@ -1,1 +1,1 @@
-# PrismKit for Android
+# PrismSDK
