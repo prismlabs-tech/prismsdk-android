@@ -22,7 +22,7 @@ To install the latest version of the package, simple add a new `implementation` 
 ```kotlin
 dependencies {
     // ...
-    implementation("tech.prismlabs:prismsdk:0.0.1")
+    implementation("tech.prismlabs:prismsdk:0.0.3")
 }
 ```
 
