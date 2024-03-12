@@ -30,8 +30,19 @@ In order to install packages from GitHub you need to specify the repository
 ```kotlin
 repositories {
     //...
-    maven("https://maven.pkg.github.com/prismlabs-tech/prismsdk-android")
+    maven {
+         url = uri("https://maven.pkg.github.com/prismlabs-tech/prismsdk-android")
+        credentials {
+            username = "<github_username>"
+            password = "<pat_token>"
+        }
+    }
 }
 ```
 
+Note: You can use environment variables to set the username and password for the maven credentials.
+
 This will tell Gradle where to look for the PrismSDK.
+
+In order for Gradle to be able to access the Github Maven Repository, you have to supply it with a username and personal access token with the permissions `read:ackages`. 
+This does not require access to this repo, its simply to authenticate with the GitHub API. This means a dummy github account, or a scoped access token strickly for package fetching will suffice.
