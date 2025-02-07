@@ -22,19 +22,22 @@ To install the latest version of the package, simple add a new `implementation` 
 ```kotlin
 dependencies {
     // ...
-    implementation("tech.prismlabs:prismsdk:0.0.3")
+    implementation("tech.prismlabs:prismsdk:1.0.3") // it is recommended to use whatever version is newest
 }
 ```
 
-In order to install packages from GitHub you need to specify the repository 
+In order to install packages from GitHub you need to specify the remote repository in `settings.gradle`
 ```kotlin
-repositories {
+dependencyResolutionManagement {
     //...
-    maven {
-         url = uri("https://maven.pkg.github.com/prismlabs-tech/prismsdk-android")
-        credentials {
-            username = "<github_username>"
-            password = "<pat_token>"
+    repositories {
+        //...
+        maven {
+            url = uri("https://maven.pkg.github.com/prismlabs-tech/prismsdk-android")
+            credentials {
+                username = "<github_username>"
+                password = "<pat_token>"
+            }
         }
     }
 }
